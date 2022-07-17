@@ -1,16 +1,6 @@
 
 //import {data} from './dictionary.js';
  const data = {
-     0: "-----",
-     1: ".----",
-     2: "..---",
-     3: "...--",
-     4: "....-",
-     5: ".....",
-     6: "-....",
-     7: "--...",
-     8: "---..",
-     9: "----.",
      A: ".-",
      B: "-...",
      C: "-.-.",
@@ -37,11 +27,35 @@
      X: "-..-",
      Y: "-.--",
      Z: "--..",
-     "!": "-.-.--",
+     0: "-----",
+     1: ".----",
+     2: "..---",
+     3: "...--",
+     4: "....-",
+     5: ".....",
+     6: "-....",
+     7: "--...",
+     8: "---..",
+     9: "----.",
      ".": ".-.-.-",
      ",": "--..--",
+     "?": "..--..",
+     "'": ".----.",
+     "!": "-.-.--",
+     "/": "-..-.",
+     "(": "-.--.",
+     ")": "-.--.-",
+     "&": ".-...",
+     ":": "---...",
+     ";": "-.-.-.",
+     "=": "-...-",
+     "+": ".-.-.",
+     "-": "-....-",
+     "_": "..--.-",
+     '"': ".-..-.",
+     "$": "...-..-",
+     "@": ".--.-.",
      " ": "/",
-     "?": "..__..",
  };
 
  const addButton = document.getElementById("submit");
@@ -128,7 +142,21 @@ function translateToEnglish(morse) {
        .join("")
        .trim().toLowerCase();    
    //console.log(decodeToEnglish);
-   /*  let upperCasing = decodeToEnglish.split('.').map(c => c[1].toUpperCase()).join('');
-    console.log(upperCasing); */
-    return decodeToEnglish.charAt(0).toUpperCase() + decodeToEnglish.slice(1);
+    let splitSentence = decodeToEnglish.split(/[.\?]/);
+    console.log(splitSentence);
+    let takeFirstOut =
+        splitSentence.shift();
+
+    console.log(takeFirstOut.charAt(0).toUpperCase() + takeFirstOut.slice(1));
+    console.log(splitSentence);
+    let capitalizedFirstWord = splitSentence.map(
+        (sentence) => sentence.charAt(1).toUpperCase() + sentence.slice(2),
+    );
+    console.log(
+        `${ takeFirstOut.charAt(0).toUpperCase() + takeFirstOut.slice(1)} ${capitalizedFirstWord.join(".")}`,
+    );
+    
+    return `${
+        takeFirstOut.charAt(0).toUpperCase() + takeFirstOut.slice(1)
+    } ${capitalizedFirstWord.join(".")}`;
 }
