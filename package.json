@@ -1,0 +1,20 @@
+{
+    "name": "morse-code-translator",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "dictionary.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Ningthangom/morse-code-translator.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Ningthangom/morse-code-translator/issues"
+    },
+    "homepage": "https://github.com/Ningthangom/morse-code-translator#readme"
+}
