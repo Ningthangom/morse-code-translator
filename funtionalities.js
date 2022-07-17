@@ -91,7 +91,9 @@ addButton.addEventListener("click", () => {
    
 });
 clearButton.addEventListener("click", () => {
-   location.reload();
+   inputText = "";
+   document.getElementById("translatedText").innerHTML = ``;
+    document.querySelector("#inputText").value = '';
 });
 
 
